@@ -1,8 +1,17 @@
+touch .gitignore
+```
+
+**Add to `.gitignore`:**
+```
 # Environment
-.venv/
 venv/
-env/
 .env
+
+# Data (too large for git)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
 
 # Python
 __pycache__/
@@ -15,20 +24,16 @@ __pycache__/
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# PyCharm
+# IDE
+.vscode/
 .idea/
-
-# Data (will be large)
-data/raw/*
-data/processed/*
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-
-# Outputs
-outputs/figures/*.png
-outputs/tables/*.csv
-*.log
+*.swp
+*.swo
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Outputs (will regenerate)
+outputs/figures/*.png
+outputs/tables/*.csv
